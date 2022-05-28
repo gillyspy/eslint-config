@@ -27,6 +27,22 @@ module.exports = {
 
   parserOptions: { ecmaVersion: latest },
 
+  ignorePatterns: [
+    '**/node_modules/**',
+    'coverage/**',
+    'tmp/**',
+    'temp/**',
+    '**/dist/**'
+  ],
+
+  overrides: [
+    {
+      files: '**/{test,tests,__tests__}/**',
+      env: {
+        jest: true
+      }
+    }
+  ],
   rules: {
     // compatbility w/ Prettier
     'prettier/prettier': [

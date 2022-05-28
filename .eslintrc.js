@@ -1,9 +1,13 @@
 const path = require('node:path'); // eslint-disable-line import/no-unresolved
+const fs = require('fs');
 
+
+const codeExists = fs.existsSync(path.join(`${__dirname}/code/FileCabinet`));
+const assumedCodeRoot = if( codeExists ) ? 'code' : 'src';
 const importAliases = {
-  '@external': path.join(`${__dirname}/code/external`),
+  '@external': path.join(`${__dirname}/${assumedCodeRoot}/external`),
   '@root': path.join(`${__dirname}/.`),
-  '@source': path.join(`${__dirname}/code`)
+  '@source': path.join(`${__dirname}/${assumedCodeRoot}`)
 };
 
 module.exports = {
@@ -41,6 +45,12 @@ module.exports = {
       env: {
         jest: true
       }
+    },
+    {
+      files: '**/FileCabinet/**',      
+      env: {
+        amd: true
+      }
     }
   ],
   rules: {
@@ -65,7 +75,7 @@ module.exports = {
     'spaced-comment': ['error', 'always', { 'block': { 'exceptions': ['-*'] } }],
     'semi': ['error', 'always', { 'omitLastInOneLineBlock': true }],
     'wrap-iife': ['warn', 'inside'],
-    'space-before-blocks': ['error', { 'functions': 'always', 'keywords': 'always', 'classes': 'off' }],
+    'space-before-blocks': ['error', { 'functions': 'always', 'keywords': 'always', 'classes': 'always' }],
     'prefer-regex-literals': 1,
     'object-curly-newline': [
       'error',
@@ -104,6 +114,7 @@ module.exports = {
         'functions': 'never'
       }
     ],
+    'no-console': 1,
     'no-confusing-arrow': ['error', { 'allowParens': true }],
     indent: ['error', 2, { 'SwitchCase': 1 }], // Changing AirBNB 2 spaces to 4
     'max-len': ['error', 160, 0], // Longer lines
@@ -117,25 +128,60 @@ module.exports = {
     'new-cap': ['off'] // because of new nlobjColumn :(
   },
   globals: {
+    context: false,
+    customer: false,
+    define: readonly,
+    JSON: true,
+    methodNotAllowedError: true,
+    nlapiAttachRecord: false,
+    nlapiCreateError: false,
+    nlapiCreateForm: false,
+    nlapiCreateRecord: false,
+    nlapiCreateSearch: false,
+    nlapiDateToString: false,
+    nlapiDeleteFile: false,
+    nlapiGetCache: false,
+    nlapiGetContext: false,
+    nlapiGetNewRecord: false,
+    nlapiGetRecordId: false,
+    nlapiGetRecordType: false,
+    nlapiGetUser: false,
+    nlapiLoadFile: false,
+    nlapiLoadRecord: false,
+    nlapiLogExecution: false,
+    nlapiLookupField: false,
+    nlapiRequestURL: false,
+    nlapiResolveURL: false,
+    nlapiSearchRecord: false,
+    nlapiSelectNodes: false,
+    nlapiSelectValue: false,
+    nlapiSubmitField: false,
+    nlapiSubmitFile: false,
+    nlapiSubmitRecord: false,
+    nlapiDeleteRecord: true,
+    nlapiYieldScript: false,
+    nlobjError: false,
+    nlobjSearchColumn: false,
+    nlobjSearchFilter: false,
+    notFoundError: false,
+    nsglobal: false,
     _gat: false,
     badRequestError: true,
     CMS: true,
-    log: readonly,
-    util: readonly,
+    log: 'readonly',
+    util: 'readonly',
     requireJsConfig: true,
     module: 'readonly',
     console: true,
-    context: true,
-    customer: true,
     JSON: true,
     methodNotAllowedError: true,
     notFoundError: true,
     order: true,
-    request: true,
+    request: false,
     require: false,
-    response: true,
+    response: false,
     SC: false,
-    session: true,
-    unauthorizedError: true
+    session: false,
+    unauthorizedError: false
   }
 };

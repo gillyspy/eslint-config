@@ -1,0 +1,16 @@
+{
+  "name": "@suitegeezus/eslint-config",
+  "version": "0.0.0",
+  "description": "eslint what else",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 0"
+  },
+  "keywords": [
+    "eslint",
+    "javascript",
+    "lint"
+  ],
+  "author": "Gerald Gillespie",
+  "license": "MIT"
+}

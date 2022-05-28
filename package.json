@@ -9,7 +9,8 @@
   "keywords": [
     "eslint",
     "javascript",
-    "lint"
+    "lint",
+    "suitescript"
   ],
   "author": "Gerald Gillespie",
   "license": "MIT",

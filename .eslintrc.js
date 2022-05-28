@@ -1,35 +1,15 @@
-const path = require('node:path'); // eslint-disable-line import/no-unresolved
-const fs = require('fs');
-
-
-const codeExists = fs.existsSync(path.join(`${__dirname}/code/FileCabinet`));
-const assumedCodeRoot = if( codeExists ) ? 'code' : 'src';
-const importAliases = {
-  '@external': path.join(`${__dirname}/${assumedCodeRoot}/external`),
-  '@root': path.join(`${__dirname}/.`),
-  '@source': path.join(`${__dirname}/${assumedCodeRoot}`)
-};
-
 module.exports = {
   // https://dev.to/s2engineers/how-to-make-eslint-work-with-prettier-avoiding-conflicts-and-problems-57pi
   'extends': ['airbnb-base', 'prettier'],
-  settings: {
-    'import/resolver': {
-      'eslint-import-resolver-custom-alias': {
-        alias: importAliases,
-        extensions: ['.ts', '.js', '.jsx', '.json']
-      }
-    }
-  },
   env: {
     browser: true,
     amd: true,
     es6: true,
     node: true
   },
-  plugins: ['prettier','requirejs','suitescript'],
+  plugins: ['prettier','requirejs','suitescript','import'],
 
-  parserOptions: { ecmaVersion: latest },
+  parserOptions: { ecmaVersion: 'latest' },
 
   ignorePatterns: [
     '**/node_modules/**',
@@ -47,7 +27,7 @@ module.exports = {
       }
     },
     {
-      files: '**/FileCabinet/**',      
+      files: '**/FileCabinet/**',
       env: {
         amd: true
       }
@@ -75,7 +55,7 @@ module.exports = {
     'suitescript/script-type': 1,
     'suitescript/no-extra-modules': 1,
     'suitescript/no-amd-name': 1,
-    
+
     // extra
 
     'spaced-comment': ['error', 'always', { 'block': { 'exceptions': ['-*'] } }],
@@ -136,7 +116,7 @@ module.exports = {
   globals: {
     context: false,
     customer: false,
-    define: readonly,
+    define: 'readonly',
     JSON: true,
     methodNotAllowedError: true,
     nlapiAttachRecord: false,

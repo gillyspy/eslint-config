@@ -27,7 +27,7 @@ module.exports = {
     es6: true,
     node: true
   },
-  plugins: ['prettier'],
+  plugins: ['prettier','requirejs','suitescript'],
 
   parserOptions: { ecmaVersion: latest },
 
@@ -70,6 +70,12 @@ module.exports = {
         quoteProps: 'preserve'
       }
     ],
+
+    // suiteScript
+    'suitescript/script-type': 1,
+    'suitescript/no-extra-modules': 1,
+    'suitescript/no-amd-name': 1,
+    
     // extra
 
     'spaced-comment': ['error', 'always', { 'block': { 'exceptions': ['-*'] } }],

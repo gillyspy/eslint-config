@@ -12,6 +12,14 @@
     "lint",
     "suitescript"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gillyspy/eslint-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gillyspy/eslint-config/issues"
+  },
+  "homepage": "https://github.com/gillyspy/eslint-config#readme",
   "author": "Gerald Gillespie",
   "license": "MIT",
   "dependencies": {

@@ -9,7 +9,7 @@ module.exports = {
       rules: {
         'jest/consistent-test-it': 2,
         'jest/expect-expect': 2,
-        'jest/max-nested-describe': [2, { 'max': 5 }],
+        'jest/max-nested-describe': [2, { 'max': 4 }],
         'jest/no-deprecated-functions': 2,
         'jest/no-done-callback': 1,
         'jest/no-export': 2,

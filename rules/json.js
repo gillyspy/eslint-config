@@ -21,11 +21,11 @@ module.exports = {
             'ignores': ['^cust', '\\W+']
           }
         ],
-        'jsonc/no-template-literal': 'error',
+        'jsonc/no-template-literals': 'error',
         'jsonc/no-regexp-literals': 'error',
-        'jsonc/no-undefined-value': 'warning',
+        'jsonc/no-undefined-value': 'warn',
         'jsonc/no-dupe-keys': 'error',
-        'jsonc/indent': ['error', '2'],
+        'jsonc/indent': ['error', 2],
         'jsonc/key-spacing': [
           'error',
           {
@@ -34,7 +34,7 @@ module.exports = {
             mode: 'strict'
           }
         ],
-        'jsonc/object-property-newline': ['error', { 'consistent': true }]
+        'jsonc/object-property-newline': ['error']
       }
     },
     {
@@ -42,7 +42,7 @@ module.exports = {
 
       rules: {
         'jsonc/sort-keys': [
-          'warning',
+          'warn',
           {
             pathPattern: '^$',
             order: [
@@ -56,8 +56,10 @@ module.exports = {
               'repository',
               'funding',
               'author',
+              'contributors',
               'type',
               'files',
+              'directories',
               'main',
               'module',
               'types',
@@ -75,7 +77,8 @@ module.exports = {
               'bundledDependencies',
               'bundleDependencies',
               'overrides',
-              'eslintConfig'
+              'eslintConfig',
+              'targets'
             ]
           },
           {

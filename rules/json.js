@@ -18,7 +18,7 @@ module.exports = {
             'PascalCase': false,
             'kebab-case': true,
             'snake_case': false,
-            'ignores': ['^cust']
+            'ignores': ['^cust', '\\W+']
           }
         ],
         'jsonc/no-template-literal': 'error',

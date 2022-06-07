@@ -11,7 +11,7 @@ module.exports = {
 
   parserOptions: { ecmaVersion: 'latest' },
 
-  ignorePatterns: ['**/node_modules/**', 'coverage/**', 'tmp/**', 'temp/**', '**/dist/**'],
+  ignorePatterns: ['**/node_modules/**', 'coverage/**', 'tmp/**', 'temp/**', '*min.js'],
 
   overrides: [],
   rules: {

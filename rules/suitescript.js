@@ -2,7 +2,7 @@
 module.exports = {
   overrides: [
     {
-      files: ['**/FileCabinet/**/*[!min].{js,ss,ssp}'],
+      files: ['**/FileCabinet/**/*.{js,ss,ssp,ts}', 'FileCabinet/**/*.{js,ss,ssp,ts}'],
       plugins: ['requirejs', 'suitescript', 'import'],
       env: {
         amd: true,

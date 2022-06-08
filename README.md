@@ -45,6 +45,7 @@ monorepo/sub-repo situation
   - suitescript
   - import (and resolver)
   - airbnb
+- aware of suitescript-related jsdoc tags e.g.'NApiVersion'
 - opinionated about js, json, markdown
 - more strict about suitescript code
 

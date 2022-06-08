@@ -22,7 +22,12 @@ module.exports = {
         'jsdoc/check-param-names': 1, // Recommended
         'jsdoc/check-property-names': 1, // Recommended
         'jsdoc/check-syntax': 1,
-        'jsdoc/check-tag-names': 1, // Recommended
+        'jsdoc/check-tag-names': [
+          1,
+          {
+            'definedTags': ['appliestorecord', 'appliedtorecord', 'governance', 'NAmdConfig', 'NApiVersion', 'NModuleScope', 'NScriptType']
+          }
+        ], // Recommended
         'jsdoc/check-types': 1, // Recommended
         'jsdoc/check-values': 1, // Recommended
         'jsdoc/empty-tags': 1, // Recommended

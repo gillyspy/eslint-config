@@ -56,5 +56,6 @@ it assumes suitescript and tests will be in a FileCabinet folder structure.
 It assumes tests are in tests folder
 
 ## Conflicts with Tests / SuiteScript
-if you're tests are in a FileCabinet structure mirroring Suitescript targets then both sets of rules will be applied 
--- I wonder if this might be annoying so let me know
+if you're tests are in a FileCabinet structure mirroring Suitescript targets then both sets of rules could be applied.
+To control this have your test filename end with something like `test.js` then the SuiteScript rules will not be 
+applied. 

@@ -2,6 +2,7 @@
 import mySS from '../../../code/FileCabinet/SuiteScripts/mySS';
 
 describe('mySS module', () => {
+  beforeAll(() => {});
   // eslint-disable-next-line jest/expect-expect,jest/prefer-todo,jest/consistent-test-it
   test.skip('asdf', () => {});
   it.todo('something future', (done) => {
@@ -17,6 +18,7 @@ describe(1, () => {
     describe(' level3', () => {
       // eslint-disable-next-line jest/valid-title
       describe('describe level4', () => {
+        // eslint-disable-next-line jest/max-nested-describe
         describe('level5', () => {
           // eslint-disable-next-line jest/max-nested-describe
           describe('level6', () => {

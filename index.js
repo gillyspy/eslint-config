@@ -4,12 +4,12 @@ module.exports = {
   env: {
     browser: true,
     amd: true,
-    es6: true,
+    es6: true, // enable es6 globals
     node: true
   },
   plugins: ['prettier', 'import'],
 
-  parserOptions: { ecmaVersion: 'latest' },
+  parserOptions: { ecmaVersion: 'latest' }, // enable latest syntax
 
   ignorePatterns: ['**/node_modules/**', 'coverage/**', 'tmp/**', 'temp/**', '*min.js'],
 

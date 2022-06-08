@@ -18,7 +18,8 @@ If you prefer ecmaversion 10 to be enforced then you will have to override that.
 `npm install @suitegeezus/eslint-config`
 
 # configuration
-You will probably want to do something like this (particularly the `'root' : true` if you are in a monorepo/sub-repo situation
+You will probably want to do something like this (particularly the `'root' : true` IF you are in the root of a 
+monorepo/sub-repo situation
 
 ## Basic Example via package.json
 
@@ -31,3 +32,28 @@ You will probably want to do something like this (particularly the `'root' : tru
     ]
   }
 ```
+
+# Features
+- Optimal for SS2.1 targets
+- Plugins included
+  - jsdoc
+  - jest
+  - jsonc
+  - markdown
+  - prettier
+  - requirejs
+  - suitescript
+  - import (and resolver)
+  - airbnb
+- opinionated about js, json, markdown
+- more strict about suitescript code
+
+## SuiteScript
+it assumes suitescript and tests will be in a FileCabinet folder structure. 
+
+## Tests
+It assumes tests are in tests folder
+
+## Conflicts with Tests / SuiteScript
+if you're tests are in a FileCabinet structure mirroring Suitescript targets then both sets of rules will be applied 
+-- I wonder if this might be annoying so let me know

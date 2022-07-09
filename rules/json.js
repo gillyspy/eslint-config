@@ -64,6 +64,7 @@ module.exports = {
               'module',
               'types',
               'exports',
+              'imports',
               'bin',
               'unpkg',
               'scripts',

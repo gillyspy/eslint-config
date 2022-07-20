@@ -2,7 +2,11 @@ const { configs: jsdocConfigs } = require('./rules/jsdoc');
 
 module.exports = {
   // https://dev.to/s2engineers/how-to-make-eslint-work-with-prettier-avoiding-conflicts-and-problems-57pi
-  'extends': ['airbnb-base', 'prettier', ...['json', 'markdown', 'suitescript', 'test'].map((name) => require.resolve(`./rules/${name}`))],
+  'extends': [
+    'airbnb-base',
+    'prettier',
+    ...['json', 'markdown', 'suitescript', 'test', 'imports', 'typescript'].map((name) => require.resolve(`./rules/${name}`))
+  ],
   env: {
     browser: true,
     es6: true, // enable es6 globals
@@ -12,7 +16,7 @@ module.exports = {
 
   parserOptions: { ecmaVersion: 'latest' }, // enable latest syntax
 
-  ignorePatterns: ['**/node_modules/**', 'coverage/**', 'tmp/**', 'temp/**', '*min.js'],
+  ignorePatterns: ['**/node_modules/**', 'coverage/**', '**/tmp/**', '**/temp/**', '**/*.min.js'],
 
   overrides: [],
   rules: {

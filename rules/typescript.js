@@ -82,32 +82,34 @@ if (isInstalled('typescript'))
             'error',
             'ignorePackages',
             {
+              js: 'never',
               ts: 'never',
               tsx: 'never'
             }
           ],
 
-          'node/file-extension-in-import': [
+          // re-enable when node is installed
+          /* 'node/file-extension-in-import': [
             'error',
             'always',
             {
               '.ts': 'never',
               '.tsx': 'never'
             }
-          ],
+          ],*/
 
           '@typescript-eslint/member-delimiter-style': 'error',
 
           '@typescript-eslint/consistent-type-assertions': 'error',
 
           // Allow functions to be passed in only in TS because it's easy to see their types
-          'unicorn/no-array-callback-reference': 'off',
+          // 'unicorn/no-array-callback-reference': 'off',
 
           // Not always possible to destructure at top-level when the variable is ambiguous
-          'unicorn/consistent-destructuring': 'off',
+          // 'unicorn/consistent-destructuring': 'off',
 
           // Could be used to pass in an explicit `undefined` to a required parameter
-          'unicorn/no-useless-undefined': 'off',
+          // 'unicorn/no-useless-undefined': 'off',
 
           // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-shadow.md
           'no-shadow': 'off',

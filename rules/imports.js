@@ -103,7 +103,7 @@ module.exports = {
 
     // ESM requires all imports to have extensions
     // https://github.com/import-js/eslint-plugin-import/blob/e6f6018/docs/rules/extensions.md
-    'import/extensions': ['error', 'ignorePackages'],
+    'import/extensions': ['warn', 'ignorePackages'],
 
     // https://github.com/import-js/eslint-plugin-import/blob/e6f6018/docs/rules/order.md
     'import/order': 'error',

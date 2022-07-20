@@ -26,7 +26,16 @@ const vanillaJsdocRules = {
   'jsdoc/require-asterisk-prefix': 1,
   'jsdoc/require-description': [1, { descriptionStyle: 'any' }],
   'jsdoc/require-description-complete-sentence': 1,
-  'jsdoc/require-example': [1, { exemptNoArguments: true, checkGetters: false, checkSetters: false }],
+  'jsdoc/require-example': [
+    1,
+    {
+      enableFixer: false,
+      exemptedBy: ['inheritdoc', 'private'],
+      exemptNoArguments: true,
+      checkGetters: false,
+      checkSetters: false
+    }
+  ],
   // 'jsdoc/require-file-overview': 1,
   // "jsdoc/require-hyphen-before-param-description": 1,
   'jsdoc/require-jsdoc': [

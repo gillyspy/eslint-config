@@ -1,6 +1,6 @@
 # README
 
-This is intended to be used by project templates that SuiteCoders are using. 
+This is intended to be used by project templates from SuiteGeezus are using. 
 
 It assumes that any suitescript files are:
 - in FileCabinet
@@ -43,6 +43,7 @@ monorepo/sub-repo situation
   - prettier
   - requirejs
   - suitescript
+  - typescript
   - import (and resolver)
   - airbnb
 - aware of suitescript-related jsdoc tags e.g.'NApiVersion'

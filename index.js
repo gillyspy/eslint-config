@@ -26,6 +26,7 @@ module.exports = {
   rules: {
     ...jsdocConfigs.vanillaJsdoc.rules,
       // extra
+      'curly' : ['error','multi','consistent'],
       'no-trailing-spaces': ["error", { "ignoreComments": true, "skipBlankLines": false }],
       'operator-linebreak': ["error", "after", { "overrides": { "?": "before", ":": "before" } }],
     'spaced-comment': ['error', 'always', { 'block': { 'exceptions': ['-*'] } }],

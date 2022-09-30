@@ -18,7 +18,12 @@ module.exports = {
 
   ignorePatterns: ['**/node_modules/**', 'coverage/**', '**/tmp/**', '**/temp/**', '**/*.min.js'],
 
-  overrides: [],
+    overrides: [],
+  settings: {
+        "jsdoc": {
+          "ignoreInternal": true
+        }
+    },
   rules: {
     ...jsdocConfigs.vanillaJsdoc.rules,
     // compatbility w/ Prettier

@@ -25,18 +25,29 @@ const vanillaJsdocRules = {
   'jsdoc/no-undefined-types': 1, // Recommended
   'jsdoc/require-asterisk-prefix': 1,
   'jsdoc/require-description': [1, { descriptionStyle: 'any' }],
+    'jsdoc/require-description'                  : [2, {
+    descriptionStyle: 'any',
+    exemptedBy : ['inheritdoc', 'private', 'deprecated', 'see','file']
+  }],
   'jsdoc/require-description-complete-sentence': 1,
-  'jsdoc/require-example': [
+  'jsdoc/require-example'                      : [
     1,
     {
-      enableFixer: false,
-      exemptedBy: ['inheritdoc', 'private'],
+      enableFixer      : false,
+      exemptedBy       : ['inheritdoc', 'private', 'deprecated', 'see'],
       exemptNoArguments: true,
-      checkGetters: false,
-      checkSetters: false
+      checkGetters     : false,
+      checkSetters     : false
     }
   ],
-  // 'jsdoc/require-file-overview': 1,
+  'jsdoc/require-file-overview'                : ['error',
+    {
+      "tags": {
+        "author": {"initialCommentsOnly": false, "mustExist": true, "preventDuplicates": false},
+        "file"  : {"initialCommentsOnly": true, "mustExist": true, "preventDuplicates": true}
+      }
+    }
+  ],
   // "jsdoc/require-hyphen-before-param-description": 1,
   'jsdoc/require-jsdoc': [
     2,

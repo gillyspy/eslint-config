@@ -4,7 +4,6 @@ module.exports = {
   // https://dev.to/s2engineers/how-to-make-eslint-work-with-prettier-avoiding-conflicts-and-problems-57pi
   'extends': [
     'airbnb-base',
-    'prettier',
     ...['json', 'markdown', 'suitescript', 'test', 'imports', 'typescript'].map((name) => require.resolve(`./rules/${name}`))
   ],
   env: {
@@ -12,7 +11,7 @@ module.exports = {
     es6: true, // enable es6 globals
     node: true
   },
-  plugins: ['prettier', 'import', 'jsdoc'],
+  plugins: ['import', 'jsdoc'],
 
   parserOptions: { ecmaVersion: 'latest' }, // enable latest syntax
 
@@ -26,24 +25,9 @@ module.exports = {
     },
   rules: {
     ...jsdocConfigs.vanillaJsdoc.rules,
-    // compatbility w/ Prettier
-    'prettier/prettier': [
-      'error',
-      {
-        trailingComma: 'none',
-        tabWidth: 2,
-        semi: true,
-        singleQuote: true,
-        useTabs: false,
-        bracketSpacing: true,
-        bracketSameLine: false,
-        arrowParens: 'always',
-        printWidth: 160,
-        quoteProps: 'preserve'
-      }
-    ],
-    // extra
-
+      // extra
+      'no-trailing-spaces': ["error", { "ignoreComments": true, "skipBlankLines": false }],
+      'operator-linebreak': ["error", "after", { "overrides": { "?": "before", ":": "before" } }],
     'spaced-comment': ['error', 'always', { 'block': { 'exceptions': ['-*'] } }],
     'semi': ['error', 'always', { 'omitLastInOneLineBlock': true }],
     'wrap-iife': ['warn', 'inside'],
